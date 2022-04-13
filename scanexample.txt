@@ -1,0 +1,25 @@
+
+to get list of devices:
+scanimage -L
+
+such as:
+
+[ksimp@rad2 scans]$ scanimage -L
+device `epkowa:usb:001:018' is a Epson Perfection 4990 flatbed scanner
+device `epson2:net:192.168.1.10' is a Epson PID 08B0 flatbed scanner
+device `epson2:libusb:001:018' is a Epson GT-X800 flatbed scanner
+
+
+
+[ksimp@rad2 scans]$ nss.sh -v epson2:libusb:001:018 -d tiff
+
+(mss.sh is db version, creates db entries)
+
+nss.sh -v epson2 -d tiff
+
+convert tiff/s00056.tif LGupc.jpg
+
+
+for f in tiff/s0009*.tif; do  echo "Converting $f"; convert "$f" "jpg/$(basename "$f" .tif).jpg"; done
+for f in tiff/*.tif; do  echo "Converting $f"; convert "$f" "jpg/$(basename "$f" .tif).jpg"; done
+
