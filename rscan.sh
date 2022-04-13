@@ -14,22 +14,20 @@
 
 if [ "$1" == "" ]; then
 echo "useage $0 -v -d dir -t format -m mode -n number -o -w "
-echo "-u user -p pword -b dbname -c customer -s -f "
-echo "-v device Required (EPSON, hp5590  epson2 etc.) " >&2
-echo "-d directory (tiff)"
-      echo "-t format (tiff, jpg, png, pdf)" >&2
+echo "-v device Required (EPSON if a V600 scanner, otherwise run scanimage -L to list) " >&2
+echo "-d target directory (tiff)"
+      echo "-t  format (tiff, jpg, png, pdf)" >&2
       echo "-m  mode (Color, Gray) " >&2
       echo "-n  start numbering, defaults to lastnumber text file" >&2
       echo "-o  Postcard mode  (scans twice, 2nd time at 150 resolution)" >&2
-      echo "-w  Write to MySQL DB" >&2
+      echo "-s  source (Flatbed, TMA Slides) not used" >&2
+      echo "-f  film type (Positive,Negative) not used " >&2
+      echo "-w  Write to MySQL DB  remaining params needed if -w is set" >&2
       echo "-u  DB user" >&2
 			echo "-p  DB password" >&2
 			echo "-b  DB Name" >&2
 			echo "-c  Customer Name" >&2
-      echo "-s  source (Flatbed, TMA Slides)*" >&2
-      echo "-f  film type (Positive,Negative)* " >&2
-      echo "  If device set to EPSON, uses linux epsonscan2 software to newer Epson Scanners  " >&2
-      echo "  * Not used in EPSON device  " >&2
+      echo "If device set to EPSON, uses linux epsonscan2 software to newer Epson Scanners  " >&2
 exit
 fi
 
