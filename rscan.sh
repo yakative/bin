@@ -199,12 +199,14 @@ do
 				echo enter y value
 				read y
 			fi
+      if [ "$WRITEDB" -eq 1 ]; then
 			echo Enter box number 
 			read box
 
 			if [ $box ]; then
 				savebox=$box
 			fi
+      fi
 
       echo Enter Resolution:
       read res
@@ -213,8 +215,10 @@ do
         saveres=$res
       fi
 
+      if [ "$WRITEDB" -eq 1 ]; then
       echo Enter Customer Index
       read cidx
+      fi
 
 			if [ $x ]; then
 				echo scan number:$i x value=$x , y value=$y  box =$savebox  res=$saveres
